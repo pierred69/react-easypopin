@@ -1,0 +1,88 @@
+@import "variables.less";
+@import "animations.less";
+
+.animate(@key) {
+    animation: @key 0.5s ease-out forwards;
+}
+
+.react-easypopin {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 999999;
+    top: 0;
+    left: 0;
+    text-align: center;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    align-content: center;
+
+    &__Overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 999997;
+        background-color: rgba(12, 12, 12, 0.75);
+        &__In {
+            display: block;
+            animation: appear-overlay .25s ease-out forwards;
+        }
+        &__Closing {
+            display: block;
+            animation: disappear-overlay .5s ease-out forwards;
+        }
+        &__Out {
+            display: none;
+        }
+    }
+
+    &__Handler {
+        @media(max-width: 740px) {
+            width: 100vw;
+            left: 0;
+            transform: translateX(0%) translateY(50%);
+        }
+        position: absolute;
+        height: auto;
+        margin: 0;
+        left: 50%;
+        transform: translateX(-50%) translateY(50%);
+        z-index: 999999;
+
+        &__Content {
+          margin: 0;
+          right: 0;
+          width: inherit;
+          min-width: 400px;
+          min-height: 5rem;
+          background: @lightGrey;
+        }
+
+        &__Close {
+            position: absolute;
+            right: 3rem;
+            color: @blueCanard;
+            top: 2rem;
+            font-size: 2rem;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+        }
+    }
+    &__Open {
+        display: block;
+        // animation will be replaced by custom animation selector
+        animation: appear_from_bottom_to_top 0.5s ease-out forwards;
+    }
+    &__Closing {
+        display: block;
+        animation: disappear 1s ease-out forwards;
+    }
+    &__Close {
+        display: none;
+    }
+}
