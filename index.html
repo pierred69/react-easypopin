@@ -3,17 +3,18 @@
   <title>react easypopin Demo</title>
 </head>
 <body>
-  <div id="main"></div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.2/react.js"></script>
-  <script src="react-easypopin.js"></script>
-  <script>
-    /* jshint undef:false */
-    React.render(
-      React.createElement(
-        ReactEasypopin, {opened: true, animation: ReactEasypopin.Effects.EFFECT_APPEAR_FROM_BOTTOM_TO_TOP},
-        React.createElement("div", {}, React.createElement("p", {}, "TEST"))
-      ),
-    document.getElementById('main'));
-  </script>
+    <div id="main"></div>
+    <script src="https://unpkg.com/react@15.3.2/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.min.js"></script>
+    <script src="react-easypopin.js"></script>
+    <script>
+        /* jshint undef:false */
+        ReactDOM.render(
+          React.createElement(
+            ReactEasypopin, {opened: true, animation: ReactEasypopin.Effects.EFFECT_APPEAR_FROM_BOTTOM_TO_TOP},
+            React.createElement("div", {}, React.createElement("p", {}, "TEST"))
+          ),
+        document.getElementById('main'));
+    </script>
 </body>
 </html>

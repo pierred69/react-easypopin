@@ -8,7 +8,7 @@ import classNames from 'classnames';
 *
 * this plugin provides a react popin made to be easy to use
 * and adaptable to all kinds of screens with large or small
-* customizable content
+* customizable content and animations
 * provides also a close button and would be completed in term
 * of features later...
 */
@@ -37,7 +37,7 @@ export default class ReactEasyPopin extends React.Component {
     static Effects = Effects;
 
     /* defines default properties */
-    static defaults = {
+    static defaultProps = {
         opened: false
     }
 
@@ -70,8 +70,9 @@ export default class ReactEasyPopin extends React.Component {
     * or internally
     */
     close () {
-        this.refs.handler.className = 'react-easypopin__Handler react-easypopin__Closing';
+        this.refs.handler.className = `react-easypopin__Handler react-easypopin__Closing ${this.getAnimation()}`;
         this.refs.overlay.className = 'react-easypopin__Overlay react-easypopin__Overlay__Closing';
+
         setTimeout(() => {
             this.setState({opened: false});
         }, 1000);
