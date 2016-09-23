@@ -76,8 +76,27 @@
     &__Open {
         display: block;
         // animation will be replaced by custom animation selector
-        animation: appear_from_bottom_to_top 0.5s ease-out forwards;
     }
+    &__Open, .fx_ttb {
+        .animate(appear_from_top_to_bottom);
+    }
+
+    &__Open, .fx_btt {
+        .animate(appear_from_bottom_to_top);
+    }
+
+    &__Open, .fx_ltr {
+        .animate(appear_from_left_to_right);
+    }
+
+    &__Open, .fx_rtl {
+        .animate(appear_from_right_to_left);
+    }
+
+    &__Open, .default {
+        .animate(appear_default);
+    }
+
     &__Closing {
         display: block;
         animation: disappear 1s ease-out forwards;
