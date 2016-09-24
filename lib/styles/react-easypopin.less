@@ -1,7 +1,7 @@
 @import "variables.less";
 @import "animations.less";
 
-.animate(@key) {
+.animateAndScale(@key) {
     animation: @key 0.5s ease-out forwards;
 }
 
@@ -41,16 +41,10 @@
     }
 
     &__Handler {
-        @media(max-width: 740px) {
-            width: 100vw;
-            left: 0;
-            transform: translateX(0%) translateY(50%);
-        }
         position: absolute;
         height: auto;
         margin: 0;
         left: 50%;
-        transform: translateX(-50%) translateY(50%);
         z-index: 999999;
 
         &__Content {
@@ -78,23 +72,23 @@
         // animation will be replaced by custom animation selector
     }
     &__Open.fx_ttb {
-        .animate(appear_from_top_to_bottom);
+        .animateAndScale(appear_from_top_to_bottom);
     }
 
     &__Open.fx_btt {
-        .animate(appear_from_bottom_to_top);
+        .animateAndScale(appear_from_bottom_to_top);
     }
 
     &__Open.fx_ltr {
-        .animate(appear_from_left_to_right);
+        .animateAndScale(appear_from_left_to_right);
     }
 
     &__Open.fx_rtl {
-        .animate(appear_from_right_to_left);
+        .animateAndScale(appear_from_right_to_left);
     }
 
     &__Open.default {
-        .animate(appear_default);
+        .animateAndScale(appear_default);
     }
 
     &__Closing {
@@ -102,23 +96,23 @@
     }
 
     &__Closing.fx_ttb {
-        .animate(disappear_from_top_to_bottom);
+        .animateAndScale(disappear_from_top_to_bottom);
     }
 
     &__Closing.fx_btt {
-        .animate(disappear_from_bottom_to_top);
+        .animateAndScale(disappear_from_bottom_to_top);
     }
 
     &__Closing.fx_ltr {
-        .animate(disappear_from_left_to_right);
+        .animateAndScale(disappear_from_left_to_right);
     }
 
     &__Closing.fx_rtl {
-        .animate(disappear_from_right_to_left);
+        .animateAndScale(disappear_from_right_to_left);
     }
 
     &__Closing.default {
-        .animate(disappear_default);
+        .animateAndScale(disappear_default);
     }
     &__Close {
         display: none;

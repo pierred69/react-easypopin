@@ -10,11 +10,12 @@
     <script>
         /* jshint undef:false */
         ReactDOM.render(
-          React.createElement(
-            ReactEasypopin, {opened: true, animation: ReactEasypopin.Effects.EFFECT_APPEAR_FROM_BOTTOM_TO_TOP},
-            React.createElement("div", {}, React.createElement("p", {}, "TEST"))
-          ),
-        document.getElementById('main'));
+            React.createElement(
+                ReactEasypopin, {opened: true, animation: ReactEasypopin.Effects.EFFECT_APPEAR_FROM_RIGHT_TO_LEFT},
+                React.createElement("div", {}, React.createElement("p", {}, "TEST"))
+            ),
+            document.getElementById('main')
+        );
     </script>
 </body>
 </html>

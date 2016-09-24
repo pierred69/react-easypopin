@@ -2,71 +2,151 @@
 // EFFECT_APPEAR_FROM_TOP_TO_BOTTOM
 
 @keyframes appear_from_top_to_bottom {
-    from {top: -50%; opacity: 0;}
-    to {top: 50%; opacity: 1;}
+    from {
+        top: -50%;
+        opacity: 0;
+        transform: translateX(-50%) translateY(0%);
+    }
+    to {
+        top: 50%;
+        opacity: 1;
+        transform: translateX(-50%) translateY(-50%);
+    }
 }
 
 @keyframes disappear_from_top_to_bottom {
-    from {top: 50%; opacity: 1;}
-    to {top: -50%; opacity: 0;}
+    from {
+        top: 50%;
+        opacity: 1;
+        transform: translateX(-50%) translateY(-50%);
+    }
+    to {
+        top: -50%;
+        opacity: 0;
+        transform: translateX(-50%) translateY(0%);
+    }
 }
 
 // EFFECT_APPEAR_FROM_BOTTOM_TO_TOP
 
 @keyframes appear_from_bottom_to_top {
-    from {bottom: -50%; opacity: 0;}
-    to {bottom: 50%; opacity: 1;}
+    from {
+        bottom: -50%;
+        opacity: 0;
+        transform: translateX(-50%) translateY(0%);
+    }
+    to {
+        bottom: 50%;
+        opacity: 1;
+        transform: translateX(-50%) translateY(50%);
+    }
 }
 
 @keyframes disappear_from_bottom_to_top {
-    from {bottom: 50%; opacity: 1;}
-    to {bottom: -50%; opacity: 0;}
+    from {
+        bottom: 50%;
+        opacity: 1;
+        transform: translateX(-50%) translateY(50%);
+    }
+    to {
+        bottom: -50%;
+        opacity: 0;
+        transform: translateX(-50%) translateY(0%);
+    }
 }
 
 // EFFECT_APPEAR_FROM_LEFT_TO_RIGHT
 
 @keyframes appear_from_left_to_right {
-    from {left: -50%; opacity: 0;}
-    to {left: 50%; opacity: 1;}
+    from {
+        left: -50%;
+        opacity: 0;
+        transform: translateX(-100%) translateY(0%);
+    }
+    to {
+        left: 50%;
+        opacity: 1;
+        transform: translateX(-50%) translateY(0%);
+    }
 }
 
 @keyframes disappear_from_left_to_right {
-    from {left: 50%; opacity: 1;}
-    to {left: -50%; opacity: 0;}
+    from {
+        left: 50%;
+        opacity: 1;
+        transform: translateX(-50%) translateY(0%);
+    }
+    to {
+        left: -50%;
+        opacity: 0;
+        transform: translateX(-100%) translateY(0%);
+    }
 }
 
 // EFFECT_APPEAR_FROM_RIGHT_TO_LEFT
 
 @keyframes appear_from_right_to_left {
-    from {right: -50%; opacity: 0;}
-    to {right: 50%; opacity: 1;}
+    from {
+        left: 100%;
+        opacity: 0;
+        transform: translateX(0%) translateY(0%);
+    }
+    to {
+        left: 50%;
+        opacity: 1;
+        transform: translateX(-50%) translateY(0%);
+    }
 }
 
 @keyframes disappear_from_right_to_left {
-    from {right: 50%; opacity: 1;}
-    to {right: -50%; opacity: 0;}
+    from {
+        left: 50%;
+        opacity: 1;
+        transform: translateX(-50%) translateY(0%);
+    }
+    to {
+        left: 100%;
+        opacity: 0;
+        transform: translateX(0%) translateY(0%);
+    }
 }
 
 // EFFECT_APPEAR_DEFAULT (just opacity)
 
 @keyframes appear_default {
-    from {opacity: 0;}
-    to {opacity: 1;}
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes disappear_default {
-    from { opacity: 1;}
-    to {opacity: 0;}
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
 
  // overlay
 
 @keyframes appear-overlay {
-    from {opacity: 0;}
-    to {opacity: 1;}
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes disappear-overlay {
-    from {opacity: 1;}
-    to {opacity: 0;}
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
