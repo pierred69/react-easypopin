@@ -2,6 +2,7 @@
   "name": "react-easypopin",
   "version": "1.0.0",
   "description": "react easypopin",
+  "main": "dist/index.js",
   "scripts": {
     "test": "eslint lib/ spec/ && ./node_modules/karma/bin/karma start karma.conf.js",
     "watch-test": "./node_modules/karma/bin/karma start karma.conf.js --auto-watch --no-single-run",
