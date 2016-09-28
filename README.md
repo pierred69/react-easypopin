@@ -2,6 +2,18 @@
 
 Get the AMD module located at `react-easypopin.js` and include it in your project.
 
+## **Installation**
+
+```
+ npm install --save-dev react-easypopin
+```
+
+## **Usage**
+
+* Import the plugin
+* Instantiate it in the template
+* Define its properties
+
 ```js
 // importation
 import ReactEasypopin from 'react-easypopin';
@@ -11,12 +23,6 @@ import ReactEasypopin from 'react-easypopin';
     // CONTENT
 </ReactEasypopin>
 ```
-
-## **How to use it ?**
-
-* Import the plugin
-* Instantiate it in the template using JSX or *React.createElement(ReactEasypopin, {property: value}, React.createElement(content));*
-* Define its properties
 
 ### Defining Properties :  
 
@@ -41,18 +47,20 @@ The popin can be opened and closed with classy CSS3 animations. Those are availa
 * *EFFECT_APPEAR_BY_HORIZONTAL_3D*
 * *EFFECT_APPEAR_DEFAULT*
 
+You can also define your own CSS class string and animation instead of using pre-configured constants.
+
 Example of usage :
 
 ```js
 
 import React, { Component } from 'react';
-import ReactEasypopin, { Effects } from 'react-easypopin';
+import ReactEasypopin, { EFFECT_APPEAR_FROM_BOTTOM_TO_TOP } from 'react-easypopin';
 
 export default class Example extends Component {
     render () {
         <div className="Example">
             <ReactEasypopin
-                animation={Effects.EFFECT_APPEAR_FROM_BOTTOM_TO_TOP}
+                animation={EFFECT_APPEAR_FROM_BOTTOM_TO_TOP}
                 ref="popin"
             />
         </div>
@@ -93,11 +101,12 @@ export default class widget extends Component {
 
 ```
 
-## Development
+## Contribution on the code ?
 
-* Development server `npm start`.
+* Fork the project and create a new branch
+* Run the server : `npm start`.
 * Continuously run tests on file changes `npm run watch-test`;
 * Run tests: `npm test`;
 * Build `npm run build`;
 
-Please note that tests are run on push
+**Please note that tests are automatically run on pre-push. Push isn't possible if tests are wrong !!**

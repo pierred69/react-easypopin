@@ -1,5 +1,4 @@
 import React from 'react/addons';
-import ReactDOM from 'react-dom';
 import ReactEasypopin from '../lib/react-easypopin.jsx';
 import * as Constants from '../lib/constants';
 
