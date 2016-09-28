@@ -111,23 +111,53 @@
     }
 }
 
-// EFFECT_APPEAR_DEFAULT (just opacity)
+
+
+// EFFECT_APPEAR_BY_HORIZONTAL_3D
+
+@keyframes appear_by_horizontal_3D {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) rotateY(90deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) rotateY(0deg);
+    }
+}
+
+@keyframes disappear_by_horizontal_3D {
+    from {
+        opacity: 1;
+        transform: translateX(-50%) rotateY(0deg)
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-50%) rotateY(90deg);
+    }
+}
+
+// EFFECT_APPEAR_DEFAULT (just opacity and position center)
 
 @keyframes appear_default {
     from {
         opacity: 0;
+        transform: translateX(-50%) translateY(0%);
     }
     to {
         opacity: 1;
+        transform: translateX(-50%) translateY(0%);
     }
 }
 
 @keyframes disappear_default {
     from {
         opacity: 1;
+        transform: translateX(-50%) translateY(0%);
     }
     to {
         opacity: 0;
+        transform: translateX(-50%) translateY(0%);
     }
 }
 

@@ -1,5 +1,18 @@
-import React, { PropTypes } from 'react';
+/**
+* @author david pierre
+* started in 2016 may 18th
+*
+* this plugin provides a react popin made to be easy to use
+* and adaptable to all kinds of screens with large or small
+* customizable content and animations
+* provides also a close button and would be completed in term
+* of features later...
+*/
+
+import React, { PropTypes, Component } from 'react';
+import classNames from 'classnames';
 import './styles/react-easypopin.less';
+
 import {
     EFFECT_APPEAR_FROM_TOP_TO_BOTTOM,
     EFFECT_APPEAR_FROM_BOTTOM_TO_TOP,
@@ -12,18 +25,8 @@ import {
     STATUS_CLOSING,
     STATUS_CLOSED
 } from './constants';
-import classNames from 'classnames';
-/**
-* @author david pierre
-* started in 2016 may 18th
-*
-* this plugin provides a react popin made to be easy to use
-* and adaptable to all kinds of screens with large or small
-* customizable content and animations
-* provides also a close button and would be completed in term
-* of features later...
-*/
-export default class ReactEasyPopin extends React.Component {
+
+export default class ReactEasyPopin extends Component {
 
     /** classic constructor that binds methods to
     * be callable from the JSX
@@ -51,25 +54,35 @@ export default class ReactEasyPopin extends React.Component {
         opened: PropTypes.bool,
         closable: PropTypes.bool,
         overlay: PropTypes.bool,
-        closeByOverlay: PropTypes.bool,
+        closableWithOverlayClick: PropTypes.bool,
         withCloseButton: PropTypes.bool,
         animation: PropTypes.string
     }
 
     /* defines default properties */
     static defaultProps = {
+        animation: EFFECT_APPEAR_DEFAULT,
         opened: false,
         closable: true,
         withCloseButton: true,
         overlay: true,
-        closeByOverlay: true
+        closableWithOverlayClick: true
+    }
+
+    checkStatus (status) {
+        return (
+            status === STATUS_OPENING
+            || status === STATUS_OPENED
+            || status === STATUS_CLOSING
+            || status === STATUS_CLOSED
+        ) ? status : STATUS_CLOSED; // default closed
     }
 
     /**
       * defines the current status state
       * @param status
     **/
-    setStatus = (status) => this.setState({'status': status});
+    setStatus = (status) => this.setState({'status': this.checkStatus(status)});
 
     /**
       * get the current status state
@@ -137,7 +150,7 @@ export default class ReactEasyPopin extends React.Component {
     */
     render () {
         const status = this.getStatus();
-        const { closable, withCloseButton } = this.props;
+        const { overlay, withCloseButton, closableWithOverlayClick } = this.props;
         const classNameHandler = classNames({
             'react-easypopin__Handler': true,
             'react-easypopin__Open' : status === STATUS_OPENING || status === STATUS_OPENED,
@@ -153,11 +166,13 @@ export default class ReactEasyPopin extends React.Component {
         });
         return (
             <div className="react-easypopin">
+                {overlay && (
                 <div
                     className={classNameOverlay}
-                    onClick={this.close}
+                    onClick={closableWithOverlayClick && this.close}
                     ref="overlay"
                 />
+                )}
                 <div
                     className={classNameHandler}
                     ref="handler"
@@ -165,13 +180,12 @@ export default class ReactEasyPopin extends React.Component {
                     <div
                         className="react-easypopin__Handler__Content"
                     >
-                      {closable && withCloseButton && (
+                      {withCloseButton && (
                           <a
                               onClick={this.close}
                               className="react-easypopin__Handler__Close"
-                          >
-                              fermer
-                          </a>
+                              ref="closeBtn"
+                          />
                       )}
                       {this.props.children}
                     </div>

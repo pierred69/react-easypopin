@@ -1,8 +1,8 @@
 @import "variables.less";
 @import "animations.less";
 
-.animate(@key) {
-    animation: @key 0.5s ease-out forwards;
+.animate(@key, @duration: 0.5s) {
+    animation: @key @duration ease-out forwards;
 }
 
 .react-easypopin {
@@ -58,13 +58,18 @@
 
         &__Close {
             position: absolute;
-            right: 3rem;
+            right: .25rem;
             color: @blueCanard;
-            top: 2rem;
+            top: 1.25rem;
             font-size: 2rem;
             text-decoration: none;
             display: inline-block;
             cursor: pointer;
+            background: url("/lib/images/close.png") center center no-repeat;
+            background-size: 1.5rem;
+            height: 1.5rem;
+            width: 1.5rem;
+            display: inline-block;
         }
     }
     &__Open {
@@ -86,6 +91,10 @@
 
     &__Open.fx_rtl {
         .animate(appear_from_right_to_left);
+    }
+
+    &__Open.fx_3d {
+        .animate(appear_by_horizontal_3D, 1s);
     }
 
     &__Open.default {
@@ -110,6 +119,10 @@
 
     &__Closing.fx_rtl {
         .animate(disappear_from_right_to_left);
+    }
+
+    &__Closing.fx_3d {
+        .animate(disappear_by_horizontal_3D, 1s);
     }
 
     &__Closing.default {
