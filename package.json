@@ -1,6 +1,6 @@
 {
   "name": "react-easypopin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "react easypopin",
   "main": "dist/index.js",
   "scripts": {
@@ -36,7 +36,8 @@
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
     "pre-push": "^0.1.1",
-    "react": "^0.13.3",
+    "react": "^15.3.2",
+    "react-dom": "15.3.2",
     "sass-loader": "~2.0.1",
     "style-loader": "~0.12.3",
     "webpack": "~1.11.0",

@@ -21,13 +21,6 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.scss$/,
-        // Query parameters are passed to node-sass
-        loader: 'style!css!sass?outputStyle=expanded&' +
-          'includePaths[]=' + (path.resolve(__dirname, './bower_components')) + '&' +
-          'includePaths[]=' + (path.resolve(__dirname, './node_modules'))
-      },
-      {
         test: /\.less/,
         loader: 'style!css!less?outputStyle=expanded&' +
           'includePaths[]=' + (path.resolve(__dirname, './bower_components')) + '&' +
@@ -35,7 +28,7 @@ module.exports = {
       },
       {
         test: /(\.js)|(\.jsx)$/,
-        exclude: /node_modules/,
+        exclude: [/node_modules/, /bower_components/],
         loader: 'babel-loader',
         query: {
           optional: ['runtime'],
