@@ -36,8 +36,6 @@
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
     "pre-push": "^0.1.1",
-    "react": "^15.3.2",
-    "react-dom": "15.3.2",
     "sass-loader": "~2.0.1",
     "style-loader": "~0.12.3",
     "webpack": "~1.11.0",
@@ -46,6 +44,7 @@
   "dependencies": {
     "babel-runtime": "~5.8.20",
     "classnames": "^2.2.5",
-    "react": "^15.3.1"
+    "react": "^15.3.2",
+    "react-dom": "15.3.2"
   }
 }

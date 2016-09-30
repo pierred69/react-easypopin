@@ -14,8 +14,12 @@ module.exports = {
   },
 
   externals: {
-   'react': 'var React',
-   'react/addons': 'var React'
+      react: {
+          root: 'React',
+          commonjs2: 'react',
+          commonjs: 'react',
+          amd: 'react'
+      }
   },
 
   module: {

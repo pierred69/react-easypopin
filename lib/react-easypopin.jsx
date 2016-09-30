@@ -149,6 +149,9 @@ export default class ReactEasyPopin extends Component {
     render () {
         const status = this.getStatus();
         const { overlay, withCloseButton, closableWithOverlayClick } = this.props;
+
+        const classNameGlobal = (!status || status === STATUS_CLOSED) ? ' react-easypopin__Closed' : '';
+
         const classNameHandler = classNames({
             'react-easypopin__Handler': true,
             'react-easypopin__Open' : status === STATUS_OPENING || status === STATUS_OPENED,
@@ -163,7 +166,7 @@ export default class ReactEasyPopin extends Component {
             'react-easypopin__Overlay__Closed': !status || status === STATUS_CLOSED
         });
         return (
-            <div className="react-easypopin">
+            <div className={`react-easypopin ${classNameGlobal}`}>
                 {overlay && (
                 <div
                     className={classNameOverlay}
