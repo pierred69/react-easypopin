@@ -44,6 +44,11 @@ module.exports = {
           optional: ['runtime'],
           stage: 0
         }
+      },
+      {
+        test: /(\.png)|(\.jpg)$/,
+        exclude: [/node_modules/, /bower_components/],
+        loader: 'url-loader'
       }
     ]
   }
